@@ -1,0 +1,252 @@
+/* pages/chat-room/index.wxss */
+page{
+  background-color: gray;
+  background: ghostwhite;
+}
+.top {
+  margin-top: 10rpx;
+  margin-left: 300rpx;
+  width: 200rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  border-bottom: 2rpx rgb(252, 247, 247) solid;
+}
+.flur{
+  background-color: ghostwhite;
+  width: 70vw;
+  height: 60rpx;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  filter: blur(120rpx);
+}
+.head{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+}
+.history {  
+  height: calc(100vh - 240rpx - 55rpx);  
+  padding: 20rpx  20rpx  20rpx  20rpx;
+  font-size: 14px;  
+  line-height: 50rpx;  
+  word-break: break-all;  
+}
+.center{
+  height: calc(100vh - 240rpx - 55rpx);
+  /* display: flex;
+  flex-direction: row; */
+}
+.nickName{
+  margin-left: 20rpx;
+  height: 50rpx;
+  width: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nickName .detail{
+  font-size: 24rpx;
+  color: rgb(190, 189, 189);
+}
+
+.bottom{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 120rpx;
+  background-color: white;
+}
+.set{
+  width: 80vw;
+  height: 55rpx;
+  border-radius: 15rpx;
+  background-color: #eef0f7;
+  padding: 0 8rpx;
+}
+.add{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 2rpx #DCE0E8 solid;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  flex: 1;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.system-message {
+  font-size: 24rpx;
+  margin-left: 300rpx;
+  border-top: 10rpx;
+  height: 20rpx;
+  color: #cecece;
+  display: inline-block;
+  justify-content: center;
+}
+
+.user-message {
+  margin: 0 20rpx;
+  text-align: left;
+  font-size: 0;
+  display: flex;
+}
+
+.userinfo {
+  display: flex;
+  position: relative;
+  width: 30%;
+  height: 30%;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 96rpx;
+  height: 96rpx;
+  margin: 10rpx;
+  border-radius: 100%;
+}
+
+.text {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.rightBox {
+  display: flex;
+  flex-direction: column nowrap;
+  float: right; 
+  margin-top: 8rpx;
+  margin-bottom: 20rpx;
+  position: relative;  
+  right: 10rpx;  
+}
+.right_text {
+  float: right;
+  background-color: #95ec69;
+  padding: 20rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  width: 400rpx;  
+}
+.right_msg {
+  float: right;
+}
+.left_text {
+  float: left;
+  background-color: #f1faf1;
+  padding: 20rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  width: 400rpx;  
+}
+.left_msg {
+  float: left;
+}
+.leftBox {
+  display: flex;
+  flex-direction: column nowrap;
+  float: left; 
+  margin-top: 30rpx;
+  position: relative;  
+  left: 10rpx;  
+}
+
+
+.r_img{
+  width: 300rpx;
+  float: right;
+}
+
+.l_img{
+  width: 300rpx;
+  float: left;
+}
+.right_head {
+  float: right;
+  width: 80rpx;  
+  height: 80rpx;
+}
+.left_head {
+  float: left;
+  width: 80rpx;  
+  height: 80rpx;
+}
+.right_new_img {  
+  width: 80rpx;
+  height: 80rpx; 
+  border-radius: 50%;  
+} 
+.left_new_img {
+  width: 80rpx;  
+  height: 80rpx;  
+  border-radius: 50%;
+}
+
+.user-message.other .text {
+  margin-left: 19rpx;
+}
+.user-message.other .text view {
+  display: inline-block;
+}
+
+.text .nickname {
+  color: #737373;
+  font-size: 34rpx;
+}
+
+.text .content {
+  font-size: 34rpx;
+  padding-left: 10rpx;
+  position: relative;
+}
+
+.user-message.other .text .content::after,
+.user-message.other .text .content::before {
+  right: 100%;
+  border-right-style: solid;
+}
+
+.input-panel {
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 13rpx 20rpx 0;
+  background: #f5f5f7;
+  border-top: #d7d7d9 1rpx solid;
+  box-sizing: border-box;
+  display: flex;
+  bottom: 0%;
+  /* justify-content: center; */
+}
+
+.send-input {
+  flex: 1;
+  height: 72rpx;
+  background: #fff;
+  border: #ddd 1rpx solid;
+  border-radius: 3px;
+  /* margin-right: 20rpx; */
+  box-sizing: border-box;
+  /* padding: 0 10rpx; */
+}
+
+.me .nickname {
+  display: none;
+}

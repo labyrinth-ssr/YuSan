@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/chat-list/index",
+    "pages/chat-room/index",
+    "pages/websocket/index"
+  ],
+  "requiredBackgroundModes": ["location"], 
+  "useExtendedLib": {
+    "weui":true
+  },
+  "usingComponents": {
+
+  },
+  "window": {
+    "backgroundColor": "#f6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e8f3fd",
+    "navigationBarTitleText": "与伞-与你共伞",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "list": [{
+      "selectedIconPath": "./images/zhenyu-2.png",
+      "iconPath": "images/zhenyu.png",
+      "pagePath": "pages/index/index",
+      "text": "发现"
+    }, {
+      "selectedIconPath": "./images/Comment-2.png",
+      "iconPath": "images/Comment.png",
+      "pagePath": "pages/chat-list/index",
+      "text": "聊天列表"
+    }]
+  },
+  "permission": {
+
+     "scope.userLocation": {
+
+     "desc": "你的位置信息将用于小程序位置接口的效果展示"
+
+   }
+
+ }
+}

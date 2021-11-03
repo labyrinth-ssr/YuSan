@@ -1,0 +1,6 @@
+<view id="mapContainer">
+  <map id="map" subkey="{{key}}" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"
+    layer-style="1" bindmarkertap="to_chat"></map>
+</view>
+
+

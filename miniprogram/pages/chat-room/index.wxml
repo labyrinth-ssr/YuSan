@@ -1,0 +1,55 @@
+<!--pages/chat-room/index.wxml-->
+<view class="page">
+
+<!--顶部信息栏-->
+  <view class="top">
+    <view class="flur"></view>
+    <view class="nickName">
+      <!-- <view>{{leftUserinfo.nickName}}</view>
+      <view class="detail">{{leftUserinfo.status}}</view> -->
+    </view>
+  </view>
+
+<!--消息框-->
+  <scroll-view class="center" scroll-y="true" scroll-into-view='{{toView}}' style="height:{{scrollHeight}}">
+    <block wx:for="{{showList}}" wx:key="index">
+      <view class="system-message" data-in="{{index}}">{{item.showTime}}</view>
+      <view class="rightBox" wx:if="{{item.openId === openId}}" data-msg="{{index}}" id='msg_{{index}}'>
+        <view class="right_msg">
+          <text class="right_text" wx:if="{{item.type=='text'}}">{{item.content}}</text>
+          <image src="{{item.content}}" wx:if="{{item.type=='image'}}" class="r_img" mode="widthFix"></image>
+        </view>
+        <view class="right_head">
+          <image src="{{userInfo.avatarUrl}}" class="right_new_img"></image>
+        </view>
+      </view>
+      <view class="leftBox" wx:if="{{item.openId === userId}}" data-msg = "{{index}}" id='msg_{{index}}'>
+        <view class="left_head">
+          <image src="{{leftUserinfo.avatarUrl}}" class="left_new_img"></image>
+        </view>
+        <view class="left_msg">
+          <text  class="left_text" wx:if="{{item.type=='text'}}">{{item.content}}</text>
+          <image src="{{item.content}}" wx:if="{{item.type=='image'}}" class="l_img" mode="widthFix"></image>
+        </view>
+        
+        
+      </view>
+    </block>
+  </scroll-view>
+
+<!--底部发送栏-->
+  <view class="bottom" style="bottom:{{sendHeight}}rpx">
+    <input type="text" 
+    class="set"
+    confirm-type="send"
+    bindconfirm='send'
+    value="{{content}}"
+    adjust-position='{{false}}'
+    bindfocus="focus"
+    bindblur="blur"></input>
+    <view class="add" bindtap="sendImage">
+      <image src="../../images/jiahao-2.png" style='width:55rpx;height:55rpx'></image>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,41 @@
+<!-- 聊天列表 -->
+<!-- <view style="background:url('../../images/背景.jpg')"></view> -->
+<image class='background' src="../../images/背景.jpg" mode="aspectFill"></image>
+<view class="page">
+  <!-- <view class="userinfo">
+    <view class="userinfo-avatar" bindtap="bindViewTap">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data type="userNickName"></open-data>
+  </view> -->
+  <!-- <view>此页面用于获取用户信息</view> -->
+  <view class="page_space">
+    <block wx:if="{{!hasUserInfo}}">
+      <button class="getUserProfile" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">获取用户信息</button>
+      <button class="getUserProfile" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取用户信息 </button>
+    </block>
+    <block wx:elif="{{!setStatus}}">
+      <button  class="haveUmbrella" bindtap="haveUmbrella" > 愿意借伞 </button>
+      <button  class="noUmbrella" bindtap="noUmbrella" > 需要借伞 </button>
+    </block>
+    <block wx:else>
+      <!-- <view class="userinfo-avatar" bindtap="toChatRoom">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data> -->
+      <view class="page_space">
+    <button class="to_map" bindtap="to_map">进入地图</button>
+  </view>
+    </block>
+  </view>
+  
+</view>
+
+<!-- <view class="container">
+  <view class="userinfo">
+    <view class="userinfo-avatar" bindtap="contactsClick">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data type="userNickName"></open-data>
+  </view>
+</view> -->

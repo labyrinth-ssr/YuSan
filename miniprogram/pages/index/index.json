@@ -1,0 +1,11 @@
+{
+  "usingComponents": {},
+
+  "window": {
+    "backgroundColor": "#f6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e8f3fd",
+    "navigationBarTitleText": "与伞-与你共伞",
+    "navigationBarTextStyle": "black"
+  }
+}

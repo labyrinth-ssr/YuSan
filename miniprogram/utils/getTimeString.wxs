@@ -1,0 +1,50 @@
+var filter = {
+  getTimeString: function (dateStr) {
+    console.log(dateStr);
+      var str = "";
+      var Y = dateStr.getFullYear(),
+          M = dateStr.getMonth() + 1,
+          D = dateStr.getDate(),
+          H = dateStr.getHours(),
+          m = dateStr.getMinutes(),
+          s = dateStr.getSeconds();
+          // 对 时 分 秒 小于10时, 加0显示 例如: 09-09 09:01
+          if (H < 10) {
+            H = '0' + H;
+          }
+          if (m < 10) {
+            m = '0' + m;
+          }
+          if (s < 10) {
+            s = '0' + s;
+          }
+      var nowTime = getDate();//获取此时此刻日期的秒数
+      var diffValue = nowTime - publishTime,
+          diff_days = parseInt(diffValue / 86400),
+          diff_hours = parseInt(diffValue / 3600),
+          diff_minutes = parseInt(diffValue / 60),
+          diff_secodes = parseInt(diffValue);
+          if (diff_days > 0 && diff_days < 3) {  
+            str = diff_days + "天前";
+          } else if (diff_days <= 0 && diff_hours > 0) {
+            str = diff_hours + "小时前";
+          } else if (diff_hours <= 0 && diff_minutes > 0) {
+            str = diff_minutes + "分钟前";
+          } else if (diff_secodes < 60) {
+            if (diff_secodes <= 0) {
+              str = "刚刚";
+            } else {
+              str = diff_secodes + "秒前";
+            }
+          } else if (diff_days >= 3 && diff_days < 30) {
+            str = M + "月" + D + "日" + H + ":" + m;
+          } else if (diff_days >= 30) {
+            str = Y + "年" + M + "月" + D + "日" + H + ":" + m;
+          }
+    return str;
+  }
+}
+
+module.exports = {
+  getTimeString: filter.getTimeString
+}

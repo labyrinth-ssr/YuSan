@@ -1,6 +1,6 @@
 <!-- 聊天列表 -->
 <!-- <view style="background:url('../../images/背景.jpg')"></view> -->
-<image class='background' src="../../images/背景.jpg" mode="aspectFill"></image>
+<image class='background' src="../../images/背景2.png" mode="aspectFill"></image>
 <view class="page">
   <!-- <view class="userinfo">
     <view class="userinfo-avatar" bindtap="bindViewTap">

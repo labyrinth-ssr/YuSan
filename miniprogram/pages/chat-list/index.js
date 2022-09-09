@@ -7,7 +7,7 @@ const app = getApp()
 const DB = wx.cloud.database()
 const _ = DB.command
 let openId = '' 
-let userArr = [] // 存放列表的user的openId
+let userArr = ["oJHaw5fIV7jFzhOq7XBe2BOy9CkI"] // 存放列表的user的openId
 let arr = '' // 存放消息类型
 let msgLists = []
 //_openid 为当前用户的openid
@@ -34,11 +34,14 @@ Page({
   },
   loadMessageList: function () {
    //userArr = []
+   console.log('arr',arr)
     for(let it of arr){
       let j = 0;
       for( ; j < userArr.length; j++){
-        if(it.userId === userArr[j])
+        if(it.userId === userArr[j]){
+          console.log('消息有记录')
           break;
+        }
       } // 不记录重复的
       if(j === userArr.length){
         userArr.push(it.userId) 
@@ -66,7 +69,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //openId = wx.getStorageSync('openId')
+    openId = wx.getStorageSync('openId')
 
     wx.showLoading({
       title: '列表加载中',
@@ -127,6 +130,15 @@ Page({
       //this.getMsgList()
       //console.log('msgUserLists', this.data.msgUserLists)
     }),
+    // wx.cloud.callFunction({
+    //   name: "messageList",
+    //   data: {
+    //     $url: "remove",
+    //     delname: "oJHaw5fIV7jFzhOq7XBe2BOy9CkI"
+    //   }
+    // }).then(
+    //   console.log('remove success!')
+    // )
     
     wx.setNavigationBarTitle({
       title: '聊天列表',

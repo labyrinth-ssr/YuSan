@@ -53,7 +53,8 @@ Page({
       this.setData({
         allMessage: res.result.data
       })
-      let arr = this.data.allMessage
+      let arr = res.result.data
+      let i = 0
       if(arr.length ===0){
         wx.cloud.database().collection('chat-msg')
           .add({
@@ -62,21 +63,24 @@ Page({
               userId,
             }
           })
+          console.log('arr.length = 0')
       } else {
-        for( let i = 0; i <= arr.length; i++){
+        for( i = 0; i < arr.length; i++){
           // 如果id与之前存在的openid或者userid相同，则不需要创建新的message类型
           if(arr[i]._openid === openId && arr[i].userId === userId 
             || arr[i]._openid === userId && arr[i].userId === openId){
               return
-          } else {
-            wx.cloud.database().collection("chat-msg")
-              .add({
-                data:{
-                  Message: [],
-                  userId
-                }
-              })
-          } 
+          }  
+        }
+        if( i === arr.length ){ // messageList里面没有存用户信息
+          console.log('he/she is your new friend')
+          wx.cloud.database().collection("chat-msg")
+            .add({
+              data:{
+                Message: [],
+                userId
+              }
+            })
         }
       }
     })

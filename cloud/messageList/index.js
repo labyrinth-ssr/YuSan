@@ -29,14 +29,24 @@ exports.main = async (event, context) => {
   })
 
   app.router("message", async (ctx, next) => {
+    
     let messageList = await DB.collection("chat-msg").where({
-      _openid: _.eq(event.openId).or(_.eq(event.userId))
+      _openid: _.or(_.eq(event.openId), _.eq(event.userId))
       }).get()
       .then( res => {
         console.log('call message: ', res)
         return res
       })
       ctx.body = messageList
+  })
+
+  app.router("remove", async (ctx, next) => {
+    await DB.collection("chat-msg").where({
+      _openid: event.delname
+    }).remove()
+    .then(
+      console.log("removed!")
+    )
   })
 
   app.router("messageList", async (ctx, next) => {

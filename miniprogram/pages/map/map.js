@@ -49,10 +49,10 @@ Page({
                 title:ele.openid,
                anchor:{x:0.5,y:0.5}
                 },{id:cnt+1,longitude:ele.location.longitude,
-                  latitude:ele.location.latitude,iconPath:'../../images/'+ele.gender+ele.status+'.png',width:41,height:41,
+                  latitude:ele.location.latitude,iconPath:'../../images/'+(ele.gender+1)+ele.status+'.png',width:41,height:41,
                   anchor:{x:0.5,y:0.5}
                   })
-              cnt +=2
+              cnt +=2;
             }
           })
           console.log('markers',markers)
